@@ -2,29 +2,46 @@
 <html>
 
 <head>
-  <link rel="shortcut icon" href="#">
+  <title>Whats App</title>
+  <link rel="icon" href="./img/favicon.png">
+  <link rel="stylesheet" href="./css/styles.min.css">
 </head>
 
 <body>
-  <h1>Whats App!</h1>
-  <div id="messages"></div>
 
+  <div class="chat">
+    <div class="chat__sidebar">
 
-  <form id="messageForm">
-    <label for="message">Message:</label>
-    <input type="text" id="message" name="message" placeholder="message" required>
-    <button type="submit" id="submit-button">Send</button>
-  </form>
-  <button id="send-location">send location</button>
+    </div>
+    <div class="chat__main">
+      <div id="messages" class="chat__messages"></div>
+      <div class="compose">
+        <form id="messageForm">
+          <label for="message"></label>
+          <input type="text" id="message" name="message" placeholder="message" required>
+          <button type="submit" id="submit-button">Send</button>
+        </form>
+        <button id="send-location">send location</button>
+      </div>
+    </div>
+  </div>
 
   <script id="message-template" type="text/html">
     <div>
-      <p>{{createdAt}} - {{message}}</p>
+      <p>
+        <span class="message__name">some user name</span>
+        <span class="message__meta">{{createdAt}}</span>
+      </p>
+      <p class="message">{{message}}</p>
     </div>
   </script>
   <script id="location-message-template" type="text/html">
-    <div>
-      <p> {{createdAt}} - <a href="{{url}}" target="_blank">My Current location</a></p>
+    <div class="message">
+      <p>
+        <span class="message__name">some user name</span>
+        <span class="message__meta">{{createdAt}}</span>
+      </p>
+      <p><a href="{{url}}" target="_blank">My Current location</a></p>
     </div>
   </script>
 
